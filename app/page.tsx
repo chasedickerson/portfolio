@@ -5,16 +5,21 @@ import { Github, Mail, Linkedin } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const projects = [
-  {
-    title: "API Platform",
-    description: "Built a scalable microservices architecture using Spring Boot and Kafka.",
-    link: "https://github.com/yourusername/api-platform",
-  },
+  // {
+  //   title: "API Platform",
+  //   description: "Built a scalable microservices architecture using Spring Boot and Kafka.",
+  //   link: "https://github.com/yourusername/api-platform",
+  // },
   {
     title: "Dev Portfolio",
     description: "Responsive developer portfolio built with Next.js and Tailwind CSS.",
-    link: "https://github.com/yourusername/dev-portfolio",
+    link: "https://github.com/chasedickerson/portfolio",
   },
+  {
+    title: "More to Come! ",
+    description: "Work in progress",
+    link: "https://github.com/chasedickerson",
+  }
 ];
 
 const skills = [
@@ -131,7 +136,33 @@ const techStack = {
   ]
 }
 
-const sections = ["experience", "skills", "projects"];
+export const achievements = [
+  {
+    title: "Education 🎓",
+    items: [
+      { icon: "💻", text: "B.S. in Computer Science – Missouri State University" },
+      { icon: "🧮", text: "Minor in Applied Mathematics – Missouri State University"},
+      { icon: "🖱️", text: "Certificate in Computer Science - Ozarks Technical Community College"}
+    ],
+  },
+  {
+    title: "Accolades 🏆",
+    items: [
+      { icon: "🥉", text: "3rd Place National Winner Skills USA Computer Programming Contest" },
+      { icon: "🥇", text: "1st Place State of Missouri Winner Skills USA Computer Programming Contest" },
+      { icon: "🎖️", text: "Employee of the Month - Ford Motor Company" }
+    ],
+  },
+  {
+    title: "Certificates 📜",
+    items: [
+      { icon: "☁️", text: "Google Cloud Certified Professional - Coursera" },
+      { icon: "🤖", text: "Generative AI for Software Developers - Coursera" },
+    ],
+  },
+];
+
+const sections = ["skills", "experience", "projects"];
 
 export default function Portfolio() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -143,13 +174,13 @@ export default function Portfolio() {
         <h1 className="text-5xl font-extrabold tracking-tight text-white">Chase Dickerson</h1>
         <p className="text-lg text-gray-400 mt-2">Software Engineer | API Specialist | Microservices Architect</p>
         <div className="flex justify-center gap-6 mt-4 text-gray-300">
-          <a href="mailto:chase@example.com" aria-label="Email">
+          <a href="mailto:chasedickerson232@gmail.com" aria-label="Email">
             <Mail size={28} />
           </a>
-          <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <a href="https://www.linkedin.com/in/chasedickerson-cs/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
             <Linkedin size={28} />
           </a>
-          <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <a href="https://github.com/chasedickerson" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
             <Github size={28} />
           </a>
         </div>
@@ -199,24 +230,63 @@ export default function Portfolio() {
       <section className="relative">
         <div className="relative overflow-hidden">
 
-          {activeIndex === 0 && (
+          {activeIndex === 1 && (
             <div id="experience" className="transition-opacity duration-300 ease-in-out">
-              <h2 className="text-3xl font-semibold text-blue-400 mb-6 border-b border-gray-700 pb-2">Experience</h2>
-              <div className="space-y-6">
+              <h2 className="text-3xl font-semibold text-blue-400 mb-6 border-b border-gray-700 pb-2">
+                Experience
+              </h2>
+
+              {/* Experience list */}
+              <div className="space-y-6 mb-12">
                 {experiences.map((exp, i) => (
-                  <div key={i} className="flex items-center gap-4 p-4 bg-gray-800 border border-gray-700 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
-                    <Image src={exp.logo} alt={`${exp.company} logo`} width={75} height={75} className="rounded" />
+                  <div
+                    key={i}
+                    className="flex items-center gap-4 p-4 bg-gray-800 border border-gray-700 rounded-lg shadow-sm hover:shadow-lg transition-shadow"
+                  >
+                    <Image
+                      src={exp.logo}
+                      alt={`${exp.company} logo`}
+                      width={75}
+                      height={75}
+                      className="rounded"
+                    />
                     <div>
-                      <h3 className="font-bold text-gray-100">{exp.role} @ {exp.company}</h3>
+                      <h3 className="font-bold text-gray-100">
+                        {exp.role} @ {exp.company}
+                      </h3>
                       <p className="text-sm text-gray-400">{exp.duration}</p>
                     </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Achievements Section */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {achievements.map((section, idx) => (
+                  <div
+                    key={idx}
+                    className="bg-gray-800 border border-gray-700 rounded-lg p-6 shadow-sm hover:shadow-lg transition-shadow"
+                  >
+                    <h3
+                      className={`text-xl font-semibold mb-4 border-b border-gray-700 pb-2 ${section.color}`}
+                    >
+                      {section.title}
+                    </h3>
+                    <ul className="space-y-2 text-gray-300 text-sm">
+                      {section.items.map((item, itemIdx) => (
+                        <li key={itemIdx}>
+                          <span className="mr-2">{item.icon}</span>
+                          {item.text}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 ))}
               </div>
             </div>
           )}
 
-          {activeIndex === 1 && (
+          {activeIndex === 0 && (
             <div id="skills" className="transition-opacity duration-300 ease-in-out">
               <h2 className="text-3xl font-semibold text-blue-400 mb-6 border-b border-gray-700 pb-2">
                 Skills
@@ -264,7 +334,7 @@ export default function Portfolio() {
                               )}
                             </div>
                           </div>
-                        
+
                         </li>
                       ))}
                     </ul>
