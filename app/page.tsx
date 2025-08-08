@@ -136,7 +136,7 @@ const techStack = {
   ]
 }
 
-export const achievements = [
+const achievements = [
   {
     title: "Education 🎓",
     items: [
@@ -268,7 +268,7 @@ export default function Portfolio() {
                     className="bg-gray-800 border border-gray-700 rounded-lg p-6 shadow-sm hover:shadow-lg transition-shadow"
                   >
                     <h3
-                      className={`text-xl font-semibold mb-4 border-b border-gray-700 pb-2 ${section.color}`}
+                      className={`text-xl font-semibold mb-4 border-b border-gray-700 pb-2`}
                     >
                       {section.title}
                     </h3>
