@@ -4,165 +4,7 @@ import Image from "next/image";
 import { Github, Mail, Linkedin } from "lucide-react";
 import { useEffect, useState } from "react";
 
-const projects = [
-  // {
-  //   title: "API Platform",
-  //   description: "Built a scalable microservices architecture using Spring Boot and Kafka.",
-  //   link: "https://github.com/yourusername/api-platform",
-  // },
-  {
-    title: "Dev Portfolio",
-    description: "Responsive developer portfolio built with Next.js and Tailwind CSS.",
-    link: "https://github.com/chasedickerson/portfolio",
-  },
-  {
-    title: "More to Come! ",
-    description: "Work in progress",
-    link: "https://github.com/chasedickerson",
-  }
-];
-
-const skills = [
-  "Java",
-  "Spring Boot",
-  "REST & GraphQL APIs",
-  "Microservices",
-  "PostgreSQL",
-  "Elasticsearch",
-  "Generative AI",
-  "Next.js"
-];
-
-const skillColors = [
-  "bg-red-500",
-  "bg-yellow-500",
-  "bg-green-500",
-  "bg-blue-500",
-  "bg-indigo-500",
-  "bg-pink-500",
-  "bg-purple-500",
-  "bg-teal-500",
-  "bg-orange-500",
-  "bg-cyan-500",
-];
-
-const experiences = [
-  {
-    company: "Ford Motor Comany",
-    role: "Senior Lead Software Engineer",
-    duration: "2022 – Present",
-    logo: "/logos/ford.png",
-  },
-  {
-    company: "Bullhorn, Inc.",
-    role: "Software Engineer III",
-    duration: "2020 – 2022",
-    logo: "/logos/bullhorn2.png",
-  },
-  {
-    company: "O'Reilly Auto Parts",
-    role: "Software Developer II",
-    duration: "2018 – 2020",
-    logo: "/logos/oreilly.png",
-  }
-];
-
-const techStack = {
-  "cloud-computing": [
-    {
-      name: "Google Cloud Platform",
-      src: "/icons/gcp.svg",
-      description: "Cloud Run, Cloud Storage, Cloud Scheduler, Secret Manager, IAM Policy, Google Translate API"
-    },
-    {
-      name: "Apigee",
-      src: "/icons/apigee.svg",
-      description: "Swagger, 42Crunch, API Compliance, JSON"
-    },
-    {
-      name: "Terraform",
-      src: "/icons/terraform-1.svg",
-      description: "Infrastructure As Code, Cloud Provisioning, Cloud Resource Management"
-    },
-    {
-      name: "Azure",
-      src: "/icons/azure.svg",
-      description: "SQL Server, Azure AD, Azure Application Gateway"
-    }
-  ],
-  "back-end": [
-    {
-      name: "Java",
-      src: "/icons/java.gif",
-      description: "API Development, Microservices, Data Structures, Design Patterns, Unit Tests, Gradle, Maven"
-    },
-    {
-      name: "Spring Boot",
-      src: "/icons/spring.svg",
-      description: "Spring Security, JPA, Hibernate, Spring Data, Spring Scheduler, REST, GraphQL, MVC"
-    },
-    {
-      name: "Elasticsearch",
-      src: "/icons/elastic.svg",
-      description: "Indexing, Mappings, Querying, Performance Optimization"
-    },
-    {
-      name: "PostgreSQL",
-      src: "/icons/postgres-1.svg",
-      description: "Core SQL, Schema Design, Indexing"
-    }
-  ],
-  "tools": [
-    {
-      name: "Git",
-      src: "/icons/git.svg",
-      description: "Version Control, GitHub Actions"
-    },
-    {
-      name: "Copilot",
-      src: "/icons/copilot.svg",
-      description: "Generative AI"
-    },
-    {
-      name: "Postman",
-      src: "/icons/postman-1.svg",
-      description: "API Testing"
-    },
-    {
-      name: "IntelliJ",
-      src: "/icons/intellij.svg",
-      description: "IDE"
-    }
-  ]
-}
-
-const achievements = [
-  {
-    title: "Education 🎓",
-    items: [
-      { icon: "💻", text: "B.S. in Computer Science – Missouri State University" },
-      { icon: "🧮", text: "Minor in Applied Mathematics – Missouri State University"},
-      { icon: "🖱️", text: "Certificate in Computer Science - Ozarks Technical Community College"}
-    ],
-  },
-  {
-    title: "Accolades 🏆",
-    items: [
-      { icon: "🥉", text: "3rd Place National Winner Skills USA Computer Programming Contest" },
-      { icon: "🥇", text: "1st Place State of Missouri Winner Skills USA Computer Programming Contest" },
-      { icon: "🎖️", text: "Employee of the Month - Ford Motor Company" }
-    ],
-  },
-  {
-    title: "Certificates 📜",
-    items: [
-      { icon: "☁️", text: "Google Cloud Certified Professional - Coursera" },
-      { icon: "🤖", text: "Generative AI for Software Developers - Coursera" },
-    ],
-  },
-];
-
-const sections = ["skills", "experience", "projects"];
+import { projects, skills, skillColors, experiences, techStack, achievements, sections } from "@/data";
 
 export default function Portfolio() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -297,9 +139,9 @@ export default function Portfolio() {
                 {skills.map((skill, i) => (
                   <span
                     key={i}
-                    className={`${skillColors[i % skillColors.length]} px-4 py-2 rounded-full text-white text-sm font-medium shadow-sm`}
+                    className={`${skill.color} px-4 py-2 rounded-full text-white text-sm font-medium shadow-sm`}
                   >
-                    {skill}
+                    {skill.name}
                   </span>
                 ))}
               </div>
@@ -367,7 +209,7 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* Footer / Contact */}
+      {/* Footer */}
       <section id="contact" className="text-center pt-10 border-t border-gray-700">
         <p className="text-sm text-gray-500">&copy; 2025 Chase Dickerson</p>
       </section>
