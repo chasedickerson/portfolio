@@ -72,62 +72,6 @@ export default function Portfolio() {
       <section className="relative">
         <div className="relative overflow-hidden">
 
-          {activeIndex === 1 && (
-            <div id="experience" className="transition-opacity duration-300 ease-in-out">
-              <h2 className="text-3xl font-semibold text-blue-400 mb-6 border-b border-gray-700 pb-2">
-                Experience
-              </h2>
-
-              {/* Experience list */}
-              <div className="space-y-6 mb-12">
-                {experiences.map((exp, i) => (
-                  <div
-                    key={i}
-                    className="flex items-center gap-4 p-4 bg-gray-800 border border-gray-700 rounded-lg shadow-sm hover:shadow-lg transition-shadow"
-                  >
-                    <Image
-                      src={exp.logo}
-                      alt={`${exp.company} logo`}
-                      width={75}
-                      height={75}
-                      className="rounded"
-                    />
-                    <div>
-                      <h3 className="font-bold text-gray-100">
-                        {exp.role} @ {exp.company}
-                      </h3>
-                      <p className="text-sm text-gray-400">{exp.duration}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Achievements Section */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {achievements.map((section, idx) => (
-                  <div
-                    key={idx}
-                    className="bg-gray-800 border border-gray-700 rounded-lg p-6 shadow-sm hover:shadow-lg transition-shadow"
-                  >
-                    <h3
-                      className={`text-xl font-semibold mb-4 border-b border-gray-700 pb-2`}
-                    >
-                      {section.title}
-                    </h3>
-                    <ul className="space-y-2 text-gray-300 text-sm">
-                      {section.items.map((item, itemIdx) => (
-                        <li key={itemIdx}>
-                          <span className="mr-2">{item.icon}</span>
-                          {item.text}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
           {activeIndex === 0 && (
             <div id="skills" className="transition-opacity duration-300 ease-in-out">
               <h2 className="text-3xl font-semibold text-blue-400 mb-6 border-b border-gray-700 pb-2">
@@ -186,6 +130,61 @@ export default function Portfolio() {
             </div>
           )}
 
+          {activeIndex === 1 && (
+            <div id="experience" className="transition-opacity duration-300 ease-in-out">
+              <h2 className="text-3xl font-semibold text-blue-400 mb-6 border-b border-gray-700 pb-2">
+                Experience
+              </h2>
+
+              {/* Experience list */}
+              <div className="space-y-6 mb-12">
+                {experiences.map((exp, i) => (
+                  <div
+                    key={i}
+                    className="flex items-center gap-4 p-4 bg-gray-800 border border-gray-700 rounded-lg shadow-sm hover:shadow-lg transition-shadow"
+                  >
+                    <Image
+                      src={exp.logo}
+                      alt={`${exp.company} logo`}
+                      width={75}
+                      height={75}
+                      className="rounded"
+                    />
+                    <div>
+                      <h3 className="font-bold text-gray-100">
+                        {exp.role} @ {exp.company}
+                      </h3>
+                      <p className="text-sm text-gray-400">{exp.duration}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Achievements Section */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {achievements.map((section, idx) => (
+                  <div
+                    key={idx}
+                    className="bg-gray-800 rounded-lg p-6 hover:shadow-xl hover:scale-[1.02] transition duration-300"
+                  >
+                    <h3
+                      className={`text-xl font-semibold mb-4 border-b border-gray-700 pb-2`}
+                    >
+                      {section.title}
+                    </h3>
+                    <ul className="space-y-2 text-gray-300 text-sm">
+                      {section.items.map((item, itemIdx) => (
+                        <li key={itemIdx}>
+                          <span className="mr-2">{item.icon}</span>
+                          {item.text}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
 
           {activeIndex === 2 && (
             <div id="projects" className="transition-opacity duration-300 ease-in-out">
