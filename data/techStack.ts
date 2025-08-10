@@ -3,7 +3,7 @@ export const techStack = {
       {
         name: "Google Cloud Platform",
         src: "/icons/gcp.svg",
-        description: "Cloud Run, Cloud Storage, Cloud Scheduler, Secret Manager, IAM Policy, Google Translate API"
+        description: "Cloud Run, Cloud SQL, Cloud Storage, Cloud Scheduler, Secret Manager, IAM Policy, Google Translate API"
       },
       {
         name: "Apigee",
