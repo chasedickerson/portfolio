@@ -53,8 +53,6 @@ export default function Portfolio() {
         </div>
       </section>
 
-
-
       {/* Navigation Buttons */}
       <nav className="flex justify-center space-x-4 mt-8">
         {sections.map((section, index) => (
@@ -202,9 +200,6 @@ export default function Portfolio() {
               </div>
             </div>
           )}
-
-
-
         </div>
       </section>
 
