@@ -2,9 +2,9 @@
 
 import Image from "next/image";
 import { Github, Mail, Linkedin } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
-import { projects, skills, skillColors, experiences, techStack, achievements, sections } from "@/data";
+import { projects, skills, experiences, techStack, achievements, sections } from "@/data";
 
 export default function Portfolio() {
   const [activeIndex, setActiveIndex] = useState(0);
