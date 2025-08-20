@@ -50,9 +50,18 @@ This portfolio showcases **About**, **Skills**, **Experience**, **Education**, *
 
 ---
 
+## 💻 Deployment
+
+- **Live Site:** https://chasedickerson.vercel.app/
+- **Deployed Via Vercel**
+
+---
+
 
 📝 License
 This project is open-source and available under the MIT License.
+
+
 
 👨‍💻 Author
 Chase Dickerson
