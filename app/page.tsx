@@ -47,7 +47,7 @@ export default function Portfolio() {
               I’m a software engineer focused on building robust backend systems and polished frontend interfaces. I specialize in Java, Spring Boot, and API development — with a keen eye for clean and performant UIs using frameworks like Next.js.
             </p>
             <p className="mt-3 text-gray-400 text-sm leading-relaxed">
-              When I’m not coding, I’m probably exploring new tech, refining APIs, or leveling up in Elden Ring.
+              When I’m not coding, I’m probably exploring new tech, refining APIs, or out on the golf course.
             </p>
           </div>
         </div>

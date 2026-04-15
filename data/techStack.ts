@@ -13,7 +13,7 @@ export const techStack = {
       {
         name: "Terraform",
         src: "/icons/terraform-1.svg",
-        description: "Infrastructure As Code, Cloud Provisioning, Cloud Resource Management"
+        description: "Infrastructure As Code, Tekton, Cloud Provisioning, Cloud Resource Management"
       },
       {
         name: "Azure",
@@ -30,7 +30,7 @@ export const techStack = {
       {
         name: "Spring Boot",
         src: "/icons/spring.svg",
-        description: "Spring Security, JPA, Hibernate, Spring Data, Spring Scheduler, REST, GraphQL, MVC"
+        description: "Spring Security, JPA, Hibernate, MyBatis, Spring Cloud, Spring Scheduler, REST, GraphQL, MVC"
       },
       {
         name: "Elasticsearch",
