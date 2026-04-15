@@ -1,7 +1,7 @@
 export const experiences = [
     {
       company: "Ford Motor Comany",
-      role: "Senior Lead Software Engineer",
+      role: "Lead Software Engineer",
       duration: "2022 – Present",
       logo: "/logos/ford.png",
     },
